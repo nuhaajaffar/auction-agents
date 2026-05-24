@@ -9,11 +9,17 @@ class RandomAgent(BaseAgent):
         if current_highest_bid >= item.true_value:
             return 0
         
-        # generate a random bid within valid range
-        bid = random.randint(current_highest_bid 1, item.true_value)
+        minimum_bid = current_highest_bid + 1
+        maximum_bid = item.true_value
 
-        # prevent overspending
-        bid = min(bid, self.balance)
+        if minimum_bid > maximum_bid:
+            return 0
+
+        bid = random.randint(minimum_bid, maximum_bid)
+
+        if not self.is_valid_bid(bid, current_highest_bid):
+            self.record_failed_bid()
+            return 0
 
         # record bid stats
         self.record_bid(bid)

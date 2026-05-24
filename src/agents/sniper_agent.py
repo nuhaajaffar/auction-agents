@@ -22,11 +22,8 @@ class SniperAgent(BaseAgent):
 
         bid = random.randint(minimum_bid, maximum_bid)
 
-        # prevent overspending
-        bid = min(bid, self.balance)
-
-        # reject invalid bid
-        if bid <= current_highest_bid:
+        if not self.is_valid_bid(bid, current_highest_bid):
+            self.record_failed_bid()
             return 0
         
         # record bid stats

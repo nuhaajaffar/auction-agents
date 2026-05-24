@@ -12,13 +12,15 @@ class ConservativeAgent(BaseAgent):
         minimum_bid = current_highest_bid + 1
         maximum_bid = min(current_highest_bid + 5, item.true_value)
         
+        # prevent invalid ranges
+        if minimum_bid > maximum_bid:
+            minimum_bid = current_highest_bid + 1
+            maximum_bid = minimum_bid
+
         bid = random.randint(minimum_bid, maximum_bid)
-
-        # prevent overspending
-        bid = min(bid, self.balance)
-
-        # reject invalid bid
-        if bid <= current_highest_bid:
+        
+        if not self.is_valid_bid(bid, current_highest_bid):
+            self.record_failed_bid()
             return 0
         
         # record bid stats
