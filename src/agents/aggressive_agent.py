@@ -2,7 +2,7 @@ import random
 
 from agents.base_agent import BaseAgent
 
-class AggresiveAgent(BaseAgent):
+class AggressiveAgent(BaseAgent):
 
     def place_bid(self, item, current_highest_bid):
         
