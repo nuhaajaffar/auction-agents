@@ -14,7 +14,7 @@ class BaseAgent:
         self.bid_history = []
         self.profit_history = []
 
-    def place_bid(self, item):
+    def place_bid(self, item, current_highest_bid = 0, current_round = 1, max_rounds = 5):
         
         raise NotImplementedError("Subclasses must implement place_bid()")
 
@@ -50,6 +50,18 @@ class BaseAgent:
     def record_failed_bid(self):
 
         self.failed_bids += 1
+
+    def update_profit(self, profit):
+      
+        self.total_profit += profit
+        self.profit_history.append(profit)
+
+    def get_average_bid(self):
+
+        if len(self.bid_history) == 0:
+            return 0
+        
+        return sum(self.bid_history) / len(self.bid_history)
 
     def get_win_rate(self, total_rounds):
         

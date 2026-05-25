@@ -4,7 +4,7 @@ from agents.base_agent import BaseAgent
 
 class AggressiveAgent(BaseAgent):
 
-    def place_bid(self, item, current_highest_bid):
+    def place_bid(self, item, current_highest_bid = 0, current_round = 1, max_rounds = 5):
         
         if current_highest_bid >= item.true_value:
             return 0
