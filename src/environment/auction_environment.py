@@ -30,7 +30,10 @@ class AuctionEnvironment:
 
         bids = {}
 
-        for agent in self.agents:
+        bidding_order = self.agents.copy()
+        random.shuffle(bidding_order)
+
+        for agent in bidding_order:
             try:
                 bid = agent.place_bid(item, current_highest_bid, current_round, self.num_rounds, self.memory)
             except Exception as e:
