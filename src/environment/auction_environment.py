@@ -76,7 +76,13 @@ class AuctionEnvironment:
         
         winner, winning_bid = self.determine_winner(bids)
 
-        self.memory.market_prices.append(winning_bid)
+        for agent, bid in bids.items():
+            if winner is not None and agent != winner and bid > 0:
+                self.memory.update_loss(
+                    bid = bid,
+                    price = item.true_value,
+                    round_id = round_number
+                )
 
         # no winner case
         if winner is None:
@@ -101,6 +107,12 @@ class AuctionEnvironment:
         winner.total_spent += winning_bid
         winner.balance -= winning_bid
         winner.update_profit(profit)
+
+        self.memory.update_win(
+            bid = winning_bid,
+            price = item.true_value,
+            round_id = round_number
+        )
 
         # store results
         round_result = {
