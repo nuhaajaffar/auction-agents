@@ -4,7 +4,7 @@ from agents.base_agent import BaseAgent
 
 class SniperAgent(BaseAgent):
 
-    def place_bid(self, item, current_highest_bid = 0, current_round = 1, max_rounds = 5):
+    def place_bid(self, item, current_highest_bid = 0, current_round = 1, max_rounds = 5, memory = None):
         
         # activate only in late game
         if current_round < max_rounds - 2:
@@ -28,5 +28,12 @@ class SniperAgent(BaseAgent):
         
         # record bid stats
         self.record_bid(bid)
+
+        if memory:
+            memory.round_history.append({
+                "agent": "sniper",
+                "round": current_round,
+                "bid": bid
+            })
 
         return bid

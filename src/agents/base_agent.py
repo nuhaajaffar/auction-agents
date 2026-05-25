@@ -14,7 +14,7 @@ class BaseAgent:
         self.bid_history = []
         self.profit_history = []
 
-    def place_bid(self, item, current_highest_bid = 0, current_round = 1, max_rounds = 5):
+    def place_bid(self, item, current_highest_bid = 0, current_round = 1, max_rounds = 5, memory = None):
         
         raise NotImplementedError("Subclasses must implement place_bid()")
 
@@ -69,3 +69,8 @@ class BaseAgent:
             return 0
 
         return self.wins / total_rounds
+    
+    def log_memory(self, memory, data):
+
+        if memory is not None:
+            memory.round_history.append(data)

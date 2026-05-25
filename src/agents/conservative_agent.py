@@ -4,7 +4,7 @@ from agents.base_agent import BaseAgent
 
 class ConservativeAgent(BaseAgent):
     
-    def place_bid(self, item, current_highest_bid = 0, current_round = 1, max_rounds = 5):
+    def place_bid(self, item, current_highest_bid = 0, current_round = 1, max_rounds = 5, memory = None):
         
         if current_highest_bid >= item.true_value:
             return 0
@@ -25,5 +25,12 @@ class ConservativeAgent(BaseAgent):
         
         # record bid stats
         self.record_bid(bid)
+
+        if memory:
+            memory.round_history.append({
+                "agent": "conservative",
+                "round": current_round,
+                "bid": bid
+            })
 
         return bid

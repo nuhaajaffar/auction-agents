@@ -12,9 +12,10 @@ from environment.item import AuctionItem
 
 class AuctionEnvironment:
 
-    def __init__(self, agents, num_rounds = 100):
+    def __init__(self, agents, memory, num_rounds = 100):
 
         self.agents = agents
+        self.memory = memory
         self.num_rounds = num_rounds
 
         self.results = []
@@ -31,7 +32,7 @@ class AuctionEnvironment:
 
         for agent in self.agents:
 
-            bid = agent.place_bid(item, current_highest_bid, current_round, self.num_rounds)
+            bid = agent.place_bid(item, current_highest_bid, current_round, self.num_rounds, self.memory)
 
             bids[agent] = bid
 
@@ -74,6 +75,8 @@ class AuctionEnvironment:
         bids = self.collect_bids(item, round_number)
         
         winner, winning_bid = self.determine_winner(bids)
+
+        self.memory.market_prices.append(winning_bid)
 
         # no winner case
         if winner is None:
