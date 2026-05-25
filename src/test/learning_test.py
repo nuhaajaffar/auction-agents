@@ -1,5 +1,6 @@
 import sys
 import os
+import json
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "src")))
 
@@ -26,5 +27,28 @@ def run_learning_test():
     )
 
     env.run_simulation()
+
+    learning_results = {
+        "adaptive_agent": {
+            "wins": adaptive_agent.wins,
+            "total_profit": adaptive_agent.total_profit,
+            "average_bid": round(adaptive_agent.get_average_bid(), 2),
+            "failed_bids": adaptive_agent.failed_bids,
+            "aggressiveness_history": adaptive_agent.aggressiveness_history
+        },
+        "fixed_agent": {
+            "wins": fixed_agent.wins,
+            "total_profit": fixed_agent.total_profit,
+            "average_bid": round(fixed_agent.get_average_bid(), 2),
+            "failed_bids": fixed_agent.failed_bids
+        }
+    }
+
+    os.makedirs("results", exist_ok = True)
+
+    with open("results/learning_metrics.json", "w") as f:
+        json.dump(learning_results, f, indent = 4)
+
+    print("\nLearning metrics exported successfully.")
 
 run_learning_test()
