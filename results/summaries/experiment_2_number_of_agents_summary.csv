@@ -1,0 +1,4 @@
+num_agents,avg_profit,std_profit,avg_win_rate,std_win_rate,avg_efficiency,std_efficiency
+5,120.38,71.02,0.2,0.1612,0.3254,0.3802
+10,8.88,17.34,0.1,0.1418,0.023,0.0546
+20,0.41,1.52,0.05,0.0737,0.0011,0.0044

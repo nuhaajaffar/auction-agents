@@ -1,0 +1,6 @@
+agent,avg_profit,std_profit,avg_win_rate,std_win_rate,avg_efficiency,std_efficiency
+Random Agent,159.7,108.15,0.11,0.0721,0.5146,0.2099
+Conservative Agent,152.9,98.03,0.1667,0.0861,0.3207,0.1736
+Aggressive Agent,177.4,55.93,0.1933,0.041,0.2593,0.0646
+Sniper Agent,47.9,42.21,0.04,0.0263,0.3929,0.4079
+Adaptive Agent,122.2,86.79,0.49,0.0353,0.0831,0.06
