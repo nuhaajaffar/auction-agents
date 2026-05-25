@@ -1,15 +1,12 @@
-from agents.random_agent import RandomAgent
-from environment.auction_environment import AuctionEnvironment
+# stores item value
 
-agents = [
-    RandomAgent("Agent A"),
-    RandomAgent("Agent B"),
-    RandomAgent("Agent C")
-]
+class AuctionItem:
 
-environment = AuctionEnvironment(
-    agents = agents,
-    num_rounds = 5
-)
+    def __init__(self, item_id, true_value):
 
-environment.run_simulation()
+        self.item_id = item_id
+        self.true_value = true_value
+
+    def __str__(self):
+        
+        return f"Item {self.item_id} | Value: {self.true_value}"
