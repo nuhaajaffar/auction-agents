@@ -2,7 +2,7 @@ import random
 
 from agents.base_agent import BaseAgent
 
-class AdaptiveBidder(BaseAgent):
+class AdaptiveAgent(BaseAgent):
 
     def __init__(self, name = "Adaptive", balance = 100):
 
@@ -40,14 +40,6 @@ class AdaptiveBidder(BaseAgent):
         # competition adjustment
         competition_factor = 1 + competition * 0.5
 
-        # aggressiveness adaptation
-        if current_round > max_rounds * 0.7:
-            self.aggressiveness += 0.05
-        else:
-            self.aggressiveness *= 0.98  # slowly calm down
-
-        self.aggressiveness = max(0.7, min(1.5, self.aggressiveness))
-
         # final bid calculation
         bid = base_value
         bid *= market_factor
@@ -70,5 +62,19 @@ class AdaptiveBidder(BaseAgent):
             return 0
 
         self.record_bid(bid)
+            
+        # update learning
+        self.update_aggressiveness(memory)
 
         return bid
+
+    # learning mechanism
+    def update_aggressiveness(self, memory):
+
+        if len(memory.winning_bids) > len(memory.losing_bids):
+            self.aggressiveness += 0.05
+        else:
+            self.aggressiveness -= 0.05
+
+        # clamp to safe range
+        self.aggressiveness = max(0.7, min(1.3, self.aggressiveness))
