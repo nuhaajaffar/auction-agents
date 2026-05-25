@@ -10,12 +10,12 @@ class ConservativeAgent(BaseAgent):
             return 0
         
         minimum_bid = current_highest_bid + 1
-        maximum_bid = min(current_highest_bid + 5, item.true_value)
+        maximum_bid = min(current_highest_bid + 5, item.true_value, self.balance)
         
         # prevent invalid ranges
         if minimum_bid > maximum_bid:
-            minimum_bid = current_highest_bid + 1
-            maximum_bid = minimum_bid
+            self.record_failed_bid()
+            return 0
 
         bid = random.randint(minimum_bid, maximum_bid)
         
@@ -28,9 +28,10 @@ class ConservativeAgent(BaseAgent):
 
         if memory:
             memory.round_history.append({
-                "agent": "conservative",
+                "agent": self.name,
                 "round": current_round,
-                "bid": bid
+                "bid": bid,
+                "result": "submitted"
             })
 
         return bid

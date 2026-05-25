@@ -7,18 +7,19 @@ class SniperAgent(BaseAgent):
     def place_bid(self, item, current_highest_bid = 0, current_round = 1, max_rounds = 5, memory = None):
         
         # activate only in late game
-        if current_round < max_rounds - 2:
+        if current_round < max_rounds * 0.7:
             return 0
         
         if current_highest_bid >= item.true_value:
             return 0
         
         minimum_bid = current_highest_bid + 15
-        maximum_bid = min(current_highest_bid + 30, item.true_value)
+        maximum_bid = min(current_highest_bid + 30, item.true_value, self.balance)
 
         # prevent invalid ranges
         if minimum_bid > maximum_bid:
-            minimum_bid = current_highest_bid + 1
+            self.record_failed_bid()
+            return 0
 
         bid = random.randint(minimum_bid, maximum_bid)
 
@@ -31,9 +32,10 @@ class SniperAgent(BaseAgent):
 
         if memory:
             memory.round_history.append({
-                "agent": "sniper",
+                "agent": self.name,
                 "round": current_round,
-                "bid": bid
+                "bid": bid,
+                "result": "submitted"
             })
 
         return bid

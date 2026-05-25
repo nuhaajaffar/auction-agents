@@ -8,25 +8,26 @@ class Memory:
         self.round_history = []
         self.competitor_strength = 0.5 # default neutral value
         
-    def update_win(self, bid, price, round_id = None):
+    def update_win(self, agent_name, bid, price, round_id = None):
         
-        self.winning_bids.append(price)
-        self.market_prices.append(price)
+        self.winning_bids.append(bid)
+        self.market_prices.append(bid)
 
         self.round_history.append({
             "round": round_id,
+            "agent": agent_name,
             "result": "win",
             "bid": bid,
             "price": price
         })
 
-    def update_loss(self, bid, price, round_id = None):
+    def update_loss(self, agent_name, bid, price, round_id = None):
 
         self.losing_bids.append(bid)
-        self.market_prices.append(price)
 
         self.round_history.append({
             "round": round_id,
+            "agent": agent_name,
             "result": "loss",
             "bid": bid,
             "price": price
@@ -73,9 +74,9 @@ class Memory:
         recent = self.market_prices[-5:]
         avg = sum(recent) / len(recent)
 
-        if avg > 70:
+        if avg > 100:
             return 0.9
-        elif avg > 40:
+        elif avg > 60:
             return 0.6
         else:
             return 0.3

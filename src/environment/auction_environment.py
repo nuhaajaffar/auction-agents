@@ -31,8 +31,14 @@ class AuctionEnvironment:
         bids = {}
 
         for agent in self.agents:
+            try:
+                bid = agent.place_bid(item, current_highest_bid, current_round, self.num_rounds, self.memory)
+            except Exception as e:
+                print(f"ERROR in {agent.name}: {e}")
+                bid = 0
 
-            bid = agent.place_bid(item, current_highest_bid, current_round, self.num_rounds, self.memory)
+            if bid is None:
+                bid = 0
 
             bids[agent] = bid
 
@@ -79,6 +85,7 @@ class AuctionEnvironment:
         for agent, bid in bids.items():
             if winner is not None and agent != winner and bid > 0:
                 self.memory.update_loss(
+                    agent_name = agent.name,
                     bid = bid,
                     price = item.true_value,
                     round_id = round_number
@@ -109,6 +116,7 @@ class AuctionEnvironment:
         winner.update_profit(profit)
 
         self.memory.update_win(
+            agent_name = winner.name,
             bid = winning_bid,
             price = item.true_value,
             round_id = round_number
@@ -147,6 +155,9 @@ class AuctionEnvironment:
 
         with open("results/auction_history.json", "w") as f:
             json.dump(self.results, f, indent = 4)
+
+        with open("results/memory_history.json", "w") as f:
+            json.dump(self.memory.round_history, f, indent = 4)
 
         print("\nResults exported successfully.")
 
