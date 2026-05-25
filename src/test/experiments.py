@@ -2,6 +2,7 @@ import sys
 import os
 import csv
 import statistics
+import random
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "src")))
 
@@ -156,6 +157,64 @@ def experiment_2_number_of_agents():
         group_keys = ["num_agents", "agent_type"]
     )
 
+def experiment_3_information_availability():
+
+    print("\n===== EXPERIMENT 3: INFORMATION AVAILABILITY =====")
+
+    raw_results = []
+    adaptive_only_results = []
+
+    memory_conditions = [
+        ("yes", True),
+        ("no", False)
+    ]
+
+    for run in range(1, NUM_RUNS + 1):
+
+        for memory_label, memory_access in memory_conditions:
+
+            # same seed for both memory/no-memory condition to ensure fairness
+            random.seed(3000 + run)
+
+            agents = [
+                RandomAgent("Random Agent", balance = STARTING_BALANCE),
+                ConservativeAgent("Conservative Agent", balance = STARTING_BALANCE),
+                AggressiveAgent("Aggressive Agent", balance = STARTING_BALANCE),
+                SniperAgent("Sniper Agent", balance = STARTING_BALANCE),
+                AdaptiveAgent(
+                    "Adaptive Agent",
+                    balance = STARTING_BALANCE,
+                    use_memory = memory_access
+                )
+            ]
+
+            run_results = run_single_simulation(agents)
+
+            for row in run_results:
+                row["run"] = run
+                row["memory_access"] = memory_label
+                raw_results.append(row)
+
+                if row["agent_type"] == "AdaptiveAgent":
+                    adaptive_only_results.append(row)
+
+    save_raw_csv(
+        "results/raw/experiment_3_information_availability_raw.csv",
+        raw_results
+    )
+
+    save_summary_csv(
+        "results/summaries/experiment_3_information_availability_adaptive_summary.csv",
+        adaptive_only_results,
+        group_key = "memory_access"
+    )
+
+    save_grouped_summary_csv(
+        "results/summaries/experiment_3_information_availability_by_type_summary.csv",
+        raw_results,
+        group_keys = ["memory_access", "agent_type"]
+    )
+
 def save_raw_csv(filename, rows):
 
     if not rows:
@@ -249,4 +308,5 @@ def save_grouped_summary_csv(filename, rows, group_keys):
 if __name__ == "__main__":
     ensure_result_folders()
     # experiment_1_strategy_comparison()
-    experiment_2_number_of_agents()
+    # experiment_2_number_of_agents()
+    experiment_3_information_availability()
