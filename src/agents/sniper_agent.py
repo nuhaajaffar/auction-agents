@@ -6,8 +6,8 @@ class SniperAgent(BaseAgent):
 
     def place_bid(self, item, current_highest_bid = 0, current_round = 1, max_rounds = 5):
         
-        # reject unless final round
-        if current_round < max_rounds:
+        # activate only in late game
+        if current_round < max_rounds - 2:
             return 0
         
         if current_highest_bid >= item.true_value:
