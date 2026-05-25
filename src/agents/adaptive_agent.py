@@ -14,10 +14,12 @@ class AdaptiveAgent(BaseAgent):
 
     def place_bid(self, item, current_highest_bid = 0, current_round = 1, max_rounds = 5, memory = None):
 
-        if current_highest_bid >= item.true_value:
+        perceived_value = getattr(item, "perceived_value", item.true_value)
+
+        if current_highest_bid >= perceived_value:
             return 0
 
-        base_value = item.true_value * 0.6
+        base_value = perceived_value * 0.6
 
         if self.use_memory and memory is not None:        
             
@@ -28,7 +30,7 @@ class AdaptiveAgent(BaseAgent):
             competition = memory.estimate_competition()
 
             # market adjustment
-            market_factor = 1 + (market_avg - item.true_value) / 100
+            market_factor = 1 + (market_avg - perceived_value) / 100
             market_factor = max(0.6, min(1.4, market_factor))
 
             # pressure adjustment
@@ -70,7 +72,7 @@ class AdaptiveAgent(BaseAgent):
 
         # clamp bid
         minimum_bid = current_highest_bid + 1
-        maximum_bid = min(item.true_value, self.balance)
+        maximum_bid = min(perceived_value, self.balance)
 
         if minimum_bid > maximum_bid:
             self.record_failed_bid()
@@ -98,17 +100,19 @@ class AdaptiveAgent(BaseAgent):
             "bid": bid,
             "aggressiveness": self.aggressiveness,
             "memory_access": self.use_memory,
+            "true_value": item.true_value,
+            "perceived_value": perceived_value,
             "market_average": market_avg,
             "volatility": volatility,
             "pressure": pressure,
             "competition": competition
         })
 
-        memory_status = "memory" if self.use_memory else "no memory"
+        memory_status = "memory" if self.use_memory and memory is not None else "no memory"
 
         print(
             f"{self.name} | Round {current_round} | "
-            f"Bid: {bid} | Agg: {self.aggressiveness:.2f} | {memory_status}"
+            f"True: {item.true_value} | Perceived: {perceived_value} | {memory_status}"
         )
 
         return bid

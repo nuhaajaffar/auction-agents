@@ -9,15 +9,17 @@ class FixedAgent(BaseAgent):
 
     def place_bid(self, item, current_highest_bid = 0, current_round = 1, max_rounds = 5, memory = None):
 
-        bid = self.fixed_bid
+        perceived_value = self.get_item_value(item)
 
-        if current_highest_bid >= item.true_value:
+        if current_highest_bid >= perceived_value:
             return 0
+
+        bid = self.fixed_bid
 
         if bid <= current_highest_bid:
             bid = current_highest_bid + 1
 
-        if bid > item.true_value or bid > self.balance:
+        if bid > perceived_value or bid > self.balance:
             self.record_failed_bid()
             return 0
 
@@ -27,12 +29,13 @@ class FixedAgent(BaseAgent):
 
         self.record_bid(bid)
 
-        if memory:
-            memory.round_history.append({
-                "agent": self.name,
-                "round": current_round,
-                "bid": bid,
-                "result": "submitted"
-            })
+        self.log_memory(memory, {
+            "agent": self.name,
+            "round": current_round,
+            "bid": bid,
+            "result": "submitted",
+            "perceived_value": perceived_value,
+            "true_value": item.true_value
+        })
 
         return bid

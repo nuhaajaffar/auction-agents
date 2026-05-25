@@ -86,6 +86,15 @@ def create_agent_set(num_agents):
 
     return agents
 
+def create_agents():
+    return [
+        RandomAgent("Random Agent", balance = STARTING_BALANCE),
+        ConservativeAgent("Conservative Agent", balance = STARTING_BALANCE),
+        AggressiveAgent("Aggressive Agent", balance = STARTING_BALANCE),
+        SniperAgent("Sniper Agent", balance = STARTING_BALANCE),
+        AdaptiveAgent("Adaptive Agent", balance = STARTING_BALANCE, use_memory = True)
+    ]
+
 def experiment_1_strategy_comparison():
 
     print("\n===== EXPERIMENT 1: STRATEGY COMPARISON =====")
@@ -215,6 +224,70 @@ def experiment_3_information_availability():
         group_keys = ["memory_access", "agent_type"]
     )
 
+def experiment_4_market_noise():
+
+    print("\n===== EXPERIMENT 4: MARKET NOISE =====")
+
+    noise_levels = ["low", "medium", "high"]
+
+    raw_results = []
+
+    for noise_level in noise_levels:
+
+        for run in range(1, NUM_RUNS + 1):
+
+            # same seed pattern for fair comparison across noise levels
+            random.seed(4000 + run)
+
+            agents = create_agents()
+            memory = Memory()
+
+            env = AuctionEnvironment(
+                agents = agents,
+                memory = memory,
+                num_rounds = NUM_ROUNDS,
+                noise_level = noise_level
+            )
+
+            env.run_simulation()
+
+            for agent in agents:
+
+                if agent.total_spent == 0:
+                    efficiency = 0
+                else:
+                    efficiency = agent.total_profit / agent.total_spent
+
+                raw_results.append({
+                    "agent": agent.name,
+                    "agent_type": agent.__class__.__name__,
+                    "wins": agent.wins,
+                    "win_rate": agent.get_win_rate(NUM_ROUNDS),
+                    "total_profit": agent.total_profit,
+                    "average_bid": agent.get_average_bid(),
+                    "efficiency": efficiency,
+                    "failed_bids": agent.failed_bids,
+                    "run": run,
+                    "noise_level": noise_level
+                })
+
+    save_raw_csv(
+        "results/raw/experiment_4_market_noise_raw.csv",
+        raw_results
+    )
+
+    save_summary_csv(
+        "results/summaries/experiment_4_market_noise_summary.csv",
+        raw_results,
+        group_key = "noise_level"
+    )
+
+    save_grouped_summary_csv(
+        "results/summaries/experiment_4_market_noise_by_type_summary.csv",
+        raw_results,
+        group_keys = ["noise_level", "agent_type"]
+    )
+
 def save_raw_csv(filename, rows):
 
     if not rows:
@@ -309,4 +382,5 @@ if __name__ == "__main__":
     ensure_result_folders()
     # experiment_1_strategy_comparison()
     # experiment_2_number_of_agents()
-    experiment_3_information_availability()
+    # experiment_3_information_availability()
+    experiment_4_market_noise()

@@ -18,6 +18,10 @@ class BaseAgent:
         
         raise NotImplementedError("Subclasses must implement place_bid()")
 
+    def get_item_value(self, item):
+
+        return getattr(item, "perceived_value", item.true_value)
+    
     def is_valid_bid(self, bid, current_highest_bid, minimum_bid = 1):
 
         # bid must meet min value

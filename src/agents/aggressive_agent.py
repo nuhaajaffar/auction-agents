@@ -6,11 +6,13 @@ class AggressiveAgent(BaseAgent):
 
     def place_bid(self, item, current_highest_bid = 0, current_round = 1, max_rounds = 5, memory = None):
         
-        if current_highest_bid >= item.true_value:
+        perceived_value = getattr(item, "perceived_value", item.true_value)
+
+        if current_highest_bid >= perceived_value:
             return 0
         
         minimum_bid = current_highest_bid + 10
-        maximum_bid = min(current_highest_bid + 25, item.true_value, self.balance)
+        maximum_bid = min(current_highest_bid + 25, perceived_value, self.balance)
 
         # prevent invalid ranges
         if minimum_bid > maximum_bid:
@@ -26,12 +28,13 @@ class AggressiveAgent(BaseAgent):
         # record bid stats
         self.record_bid(bid)
 
-        if memory:
-            memory.round_history.append({
-                "agent": self.name,
-                "round": current_round,
-                "bid": bid,
-                "result": "submitted"
-            })
+        self.log_memory(memory, {
+            "agent": self.name,
+            "round": current_round,
+            "bid": bid,
+            "result": "submitted",
+            "perceived_value": perceived_value,
+            "true_value": item.true_value
+        })
 
         return bid
