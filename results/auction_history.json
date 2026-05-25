@@ -1,0 +1,197 @@
+[
+    {
+        "round": 1,
+        "item_value": 92,
+        "winner": "Aggressive",
+        "winning_bid": 70,
+        "profit": 22,
+        "bids": {
+            "Random": 43,
+            "Conservative": 45,
+            "Aggressive": 70,
+            "Sniper": 0
+        }
+    },
+    {
+        "round": 2,
+        "item_value": 63,
+        "winner": "Conservative",
+        "winning_bid": 41,
+        "profit": 22,
+        "bids": {
+            "Random": 39,
+            "Conservative": 41,
+            "Aggressive": 0,
+            "Sniper": 0
+        }
+    },
+    {
+        "round": 3,
+        "item_value": 153,
+        "winner": "Conservative",
+        "winning_bid": 48,
+        "profit": 105,
+        "bids": {
+            "Random": 43,
+            "Conservative": 48,
+            "Aggressive": 0,
+            "Sniper": 0
+        }
+    },
+    {
+        "round": 4,
+        "item_value": 161,
+        "winner": "Random",
+        "winning_bid": 52,
+        "profit": 109,
+        "bids": {
+            "Random": 52,
+            "Conservative": 0,
+            "Aggressive": 0,
+            "Sniper": 0
+        }
+    },
+    {
+        "round": 5,
+        "item_value": 105,
+        "winner": "Random",
+        "winning_bid": 41,
+        "profit": 64,
+        "bids": {
+            "Random": 41,
+            "Conservative": 0,
+            "Aggressive": 0,
+            "Sniper": 0
+        }
+    },
+    {
+        "round": 6,
+        "item_value": 117,
+        "winner": "Aggressive",
+        "winning_bid": 28,
+        "profit": 89,
+        "bids": {
+            "Random": 2,
+            "Conservative": 6,
+            "Aggressive": 28,
+            "Sniper": 0
+        }
+    },
+    {
+        "round": 7,
+        "item_value": 159,
+        "winner": "Conservative",
+        "winning_bid": 5,
+        "profit": 154,
+        "bids": {
+            "Random": 1,
+            "Conservative": 5,
+            "Aggressive": 0,
+            "Sniper": 0
+        }
+    },
+    {
+        "round": 8,
+        "item_value": 179,
+        "winner": "Conservative",
+        "winning_bid": 6,
+        "profit": 173,
+        "bids": {
+            "Random": 3,
+            "Conservative": 6,
+            "Aggressive": 0,
+            "Sniper": 0
+        }
+    },
+    {
+        "round": 9,
+        "item_value": 70,
+        "winner": "Random",
+        "winning_bid": 5,
+        "profit": 65,
+        "bids": {
+            "Random": 5,
+            "Conservative": 0,
+            "Aggressive": 0,
+            "Sniper": 0
+        }
+    },
+    {
+        "round": 10,
+        "item_value": 161,
+        "winner": "Random",
+        "winning_bid": 2,
+        "profit": 159,
+        "bids": {
+            "Random": 2,
+            "Conservative": 0,
+            "Aggressive": 0,
+            "Sniper": 0
+        }
+    },
+    {
+        "round": 14,
+        "item_value": 50,
+        "winner": "Sniper",
+        "winning_bid": 25,
+        "profit": 25,
+        "bids": {
+            "Random": 0,
+            "Conservative": 0,
+            "Aggressive": 0,
+            "Sniper": 25
+        }
+    },
+    {
+        "round": 15,
+        "item_value": 151,
+        "winner": "Sniper",
+        "winning_bid": 15,
+        "profit": 136,
+        "bids": {
+            "Random": 0,
+            "Conservative": 0,
+            "Aggressive": 0,
+            "Sniper": 15
+        }
+    },
+    {
+        "round": 16,
+        "item_value": 146,
+        "winner": "Sniper",
+        "winning_bid": 21,
+        "profit": 125,
+        "bids": {
+            "Random": 0,
+            "Conservative": 0,
+            "Aggressive": 0,
+            "Sniper": 21
+        }
+    },
+    {
+        "round": 17,
+        "item_value": 135,
+        "winner": "Sniper",
+        "winning_bid": 17,
+        "profit": 118,
+        "bids": {
+            "Random": 0,
+            "Conservative": 0,
+            "Aggressive": 0,
+            "Sniper": 17
+        }
+    },
+    {
+        "round": 18,
+        "item_value": 141,
+        "winner": "Sniper",
+        "winning_bid": 18,
+        "profit": 123,
+        "bids": {
+            "Random": 0,
+            "Conservative": 0,
+            "Aggressive": 0,
+            "Sniper": 18
+        }
+    }
+]

@@ -6,9 +6,6 @@ from environment.auction_environment import AuctionEnvironment
 from memory import Memory
 
 agents = [
-    RandomAgent("Agent A"),
-    RandomAgent("Agent B"),
-    RandomAgent("Agent C"),
     RandomAgent("Random"),
     ConservativeAgent("Conservative"),
     AggressiveAgent("Aggressive"),
