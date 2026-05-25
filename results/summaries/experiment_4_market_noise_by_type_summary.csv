@@ -1,0 +1,16 @@
+noise_level,agent_type,avg_profit,std_profit,avg_win_rate,std_win_rate,avg_efficiency,std_efficiency
+low,RandomAgent,93.8,68.72,0.0733,0.0492,0.332,0.1895
+low,ConservativeAgent,200.4,149.99,0.2267,0.1075,0.2532,0.1644
+low,AggressiveAgent,120.4,96.07,0.18,0.0804,0.1723,0.0915
+low,SniperAgent,33.6,60.4,0.0333,0.0385,0.2019,0.2291
+low,AdaptiveAgent,134.1,45.91,0.4867,0.0724,0.1022,0.0504
+medium,RandomAgent,144.1,110.5,0.0767,0.0473,0.8666,0.657
+medium,ConservativeAgent,150.3,135.9,0.18,0.0789,0.2413,0.1554
+medium,AggressiveAgent,173.7,136.05,0.1733,0.0681,0.4297,0.4418
+medium,SniperAgent,51.5,75.09,0.0667,0.0385,0.3287,0.3451
+medium,AdaptiveAgent,132.3,50.26,0.5033,0.0554,0.093,0.0372
+high,RandomAgent,143.5,105.39,0.0867,0.045,0.6314,0.4607
+high,ConservativeAgent,166.1,118.0,0.1833,0.0689,0.2738,0.1831
+high,AggressiveAgent,142.9,153.97,0.16,0.0605,0.2585,0.2604
+high,SniperAgent,56.9,64.51,0.06,0.0306,0.2965,0.4329
+high,AdaptiveAgent,200.3,99.37,0.51,0.0316,0.1392,0.0701

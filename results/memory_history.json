@@ -1,301 +1,1248 @@
 [
     {
-        "agent": "Random",
+        "agent": "Conservative Agent",
         "round": 1,
-        "bid": 43,
-        "result": "submitted"
+        "bid": 4,
+        "result": "submitted",
+        "perceived_value": 99,
+        "true_value": 82
     },
     {
-        "agent": "Conservative",
+        "agent": "Random Agent",
         "round": 1,
-        "bid": 45,
-        "result": "submitted"
+        "bid": 54,
+        "result": "submitted",
+        "perceived_value": 99,
+        "true_value": 82
     },
     {
-        "agent": "Aggressive",
+        "agent": "Aggressive Agent",
         "round": 1,
+        "bid": 69,
+        "result": "submitted",
+        "perceived_value": 99,
+        "true_value": 82
+    },
+    {
+        "round": 1,
+        "agent": "Conservative Agent",
+        "result": "loss",
+        "bid": 4,
+        "price": 99
+    },
+    {
+        "round": 1,
+        "agent": "Random Agent",
+        "result": "loss",
+        "bid": 54,
+        "price": 99
+    },
+    {
+        "round": 1,
+        "agent": "Aggressive Agent",
+        "result": "loss",
+        "bid": 69,
+        "price": 99
+    },
+    {
+        "round": 1,
+        "agent": "Adaptive Agent",
+        "result": "win",
         "bid": 70,
-        "result": "submitted"
+        "price": 99
     },
     {
-        "round": 1,
-        "agent": "Random",
-        "result": "loss",
-        "bid": 43,
-        "price": 92
+        "agent": "Random Agent",
+        "round": 2,
+        "bid": 89,
+        "result": "submitted",
+        "perceived_value": 125,
+        "true_value": 106
     },
     {
-        "round": 1,
-        "agent": "Conservative",
+        "agent": "Conservative Agent",
+        "round": 2,
+        "bid": 90,
+        "result": "submitted",
+        "perceived_value": 125,
+        "true_value": 106
+    },
+    {
+        "agent": "Aggressive Agent",
+        "round": 2,
+        "bid": 106,
+        "result": "submitted",
+        "perceived_value": 125,
+        "true_value": 106
+    },
+    {
+        "round": 2,
+        "agent": "Random Agent",
         "result": "loss",
+        "bid": 89,
+        "price": 125
+    },
+    {
+        "round": 2,
+        "agent": "Conservative Agent",
+        "result": "loss",
+        "bid": 90,
+        "price": 125
+    },
+    {
+        "round": 2,
+        "agent": "Adaptive Agent",
+        "result": "loss",
+        "bid": 91,
+        "price": 125
+    },
+    {
+        "round": 2,
+        "agent": "Aggressive Agent",
+        "result": "win",
+        "bid": 106,
+        "price": 125
+    },
+    {
+        "agent": "Aggressive Agent",
+        "round": 3,
+        "bid": 117,
+        "result": "submitted",
+        "perceived_value": 210,
+        "true_value": 166
+    },
+    {
+        "agent": "Random Agent",
+        "round": 3,
+        "bid": 120,
+        "result": "submitted",
+        "perceived_value": 210,
+        "true_value": 166
+    },
+    {
+        "agent": "Conservative Agent",
+        "round": 3,
+        "bid": 121,
+        "result": "submitted",
+        "perceived_value": 210,
+        "true_value": 166
+    },
+    {
+        "round": 3,
+        "agent": "Adaptive Agent",
+        "result": "loss",
+        "bid": 102,
+        "price": 210
+    },
+    {
+        "round": 3,
+        "agent": "Aggressive Agent",
+        "result": "loss",
+        "bid": 117,
+        "price": 210
+    },
+    {
+        "round": 3,
+        "agent": "Random Agent",
+        "result": "loss",
+        "bid": 120,
+        "price": 210
+    },
+    {
+        "round": 3,
+        "agent": "Conservative Agent",
+        "result": "win",
+        "bid": 121,
+        "price": 210
+    },
+    {
+        "round": 4,
+        "agent": "Adaptive Agent",
+        "result": "win",
+        "bid": 97,
+        "price": 97
+    },
+    {
+        "agent": "Aggressive Agent",
+        "round": 5,
+        "bid": 14,
+        "result": "submitted",
+        "perceived_value": 210,
+        "true_value": 174
+    },
+    {
+        "agent": "Conservative Agent",
+        "round": 5,
+        "bid": 102,
+        "result": "submitted",
+        "perceived_value": 210,
+        "true_value": 174
+    },
+    {
+        "agent": "Random Agent",
+        "round": 5,
+        "bid": 136,
+        "result": "submitted",
+        "perceived_value": 210,
+        "true_value": 174
+    },
+    {
+        "round": 5,
+        "agent": "Aggressive Agent",
+        "result": "loss",
+        "bid": 14,
+        "price": 210
+    },
+    {
+        "round": 5,
+        "agent": "Adaptive Agent",
+        "result": "loss",
+        "bid": 99,
+        "price": 210
+    },
+    {
+        "round": 5,
+        "agent": "Conservative Agent",
+        "result": "loss",
+        "bid": 102,
+        "price": 210
+    },
+    {
+        "round": 5,
+        "agent": "Random Agent",
+        "result": "win",
+        "bid": 136,
+        "price": 210
+    },
+    {
+        "round": 6,
+        "agent": "Adaptive Agent",
+        "result": "win",
+        "bid": 57,
+        "price": 57
+    },
+    {
+        "agent": "Conservative Agent",
+        "round": 7,
+        "bid": 5,
+        "result": "submitted",
+        "perceived_value": 61,
+        "true_value": 63
+    },
+    {
+        "agent": "Aggressive Agent",
+        "round": 7,
+        "bid": 21,
+        "result": "submitted",
+        "perceived_value": 61,
+        "true_value": 63
+    },
+    {
+        "round": 7,
+        "agent": "Conservative Agent",
+        "result": "loss",
+        "bid": 5,
+        "price": 61
+    },
+    {
+        "round": 7,
+        "agent": "Aggressive Agent",
+        "result": "loss",
+        "bid": 21,
+        "price": 61
+    },
+    {
+        "round": 7,
+        "agent": "Adaptive Agent",
+        "result": "win",
+        "bid": 61,
+        "price": 61
+    },
+    {
+        "agent": "Random Agent",
+        "round": 8,
+        "bid": 38,
+        "result": "submitted",
+        "perceived_value": 106,
+        "true_value": 127
+    },
+    {
+        "agent": "Aggressive Agent",
+        "round": 8,
+        "bid": 60,
+        "result": "submitted",
+        "perceived_value": 106,
+        "true_value": 127
+    },
+    {
+        "round": 8,
+        "agent": "Random Agent",
+        "result": "loss",
+        "bid": 38,
+        "price": 106
+    },
+    {
+        "round": 8,
+        "agent": "Aggressive Agent",
+        "result": "loss",
+        "bid": 60,
+        "price": 106
+    },
+    {
+        "round": 8,
+        "agent": "Adaptive Agent",
+        "result": "win",
+        "bid": 106,
+        "price": 106
+    },
+    {
+        "agent": "Random Agent",
+        "round": 9,
+        "bid": 110,
+        "result": "submitted",
+        "perceived_value": 150,
+        "true_value": 185
+    },
+    {
+        "agent": "Aggressive Agent",
+        "round": 9,
+        "bid": 127,
+        "result": "submitted",
+        "perceived_value": 150,
+        "true_value": 185
+    },
+    {
+        "agent": "Conservative Agent",
+        "round": 9,
+        "bid": 129,
+        "result": "submitted",
+        "perceived_value": 150,
+        "true_value": 185
+    },
+    {
+        "round": 9,
+        "agent": "Random Agent",
+        "result": "loss",
+        "bid": 110,
+        "price": 150
+    },
+    {
+        "round": 9,
+        "agent": "Aggressive Agent",
+        "result": "loss",
+        "bid": 127,
+        "price": 150
+    },
+    {
+        "round": 9,
+        "agent": "Adaptive Agent",
+        "result": "loss",
+        "bid": 128,
+        "price": 150
+    },
+    {
+        "round": 9,
+        "agent": "Conservative Agent",
+        "result": "win",
+        "bid": 129,
+        "price": 150
+    },
+    {
+        "round": 10,
+        "agent": "Adaptive Agent",
+        "result": "win",
+        "bid": 51,
+        "price": 51
+    },
+    {
+        "agent": "Aggressive Agent",
+        "round": 11,
+        "bid": 13,
+        "result": "submitted",
+        "perceived_value": 42,
+        "true_value": 53
+    },
+    {
+        "agent": "Conservative Agent",
+        "round": 11,
+        "bid": 17,
+        "result": "submitted",
+        "perceived_value": 42,
+        "true_value": 53
+    },
+    {
+        "round": 11,
+        "agent": "Aggressive Agent",
+        "result": "loss",
+        "bid": 13,
+        "price": 42
+    },
+    {
+        "round": 11,
+        "agent": "Conservative Agent",
+        "result": "loss",
+        "bid": 17,
+        "price": 42
+    },
+    {
+        "round": 11,
+        "agent": "Adaptive Agent",
+        "result": "win",
+        "bid": 42,
+        "price": 42
+    },
+    {
+        "agent": "Aggressive Agent",
+        "round": 12,
+        "bid": 12,
+        "result": "submitted",
+        "perceived_value": 80,
+        "true_value": 96
+    },
+    {
+        "agent": "Conservative Agent",
+        "round": 12,
+        "bid": 14,
+        "result": "submitted",
+        "perceived_value": 80,
+        "true_value": 96
+    },
+    {
+        "round": 12,
+        "agent": "Aggressive Agent",
+        "result": "loss",
+        "bid": 12,
+        "price": 80
+    },
+    {
+        "round": 12,
+        "agent": "Conservative Agent",
+        "result": "loss",
+        "bid": 14,
+        "price": 80
+    },
+    {
+        "round": 12,
+        "agent": "Adaptive Agent",
+        "result": "win",
+        "bid": 80,
+        "price": 80
+    },
+    {
+        "agent": "Conservative Agent",
+        "round": 13,
+        "bid": 162,
+        "result": "submitted",
+        "perceived_value": 167,
+        "true_value": 152
+    },
+    {
+        "round": 13,
+        "agent": "Adaptive Agent",
+        "result": "loss",
+        "bid": 158,
+        "price": 167
+    },
+    {
+        "round": 13,
+        "agent": "Conservative Agent",
+        "result": "win",
+        "bid": 162,
+        "price": 167
+    },
+    {
+        "agent": "Aggressive Agent",
+        "round": 14,
+        "bid": 23,
+        "result": "submitted",
+        "perceived_value": 111,
+        "true_value": 138
+    },
+    {
+        "round": 14,
+        "agent": "Aggressive Agent",
+        "result": "loss",
+        "bid": 23,
+        "price": 111
+    },
+    {
+        "round": 14,
+        "agent": "Adaptive Agent",
+        "result": "win",
+        "bid": 111,
+        "price": 111
+    },
+    {
+        "agent": "Aggressive Agent",
+        "round": 15,
+        "bid": 13,
+        "result": "submitted",
+        "perceived_value": 207,
+        "true_value": 195
+    },
+    {
+        "agent": "Conservative Agent",
+        "round": 15,
+        "bid": 200,
+        "result": "submitted",
+        "perceived_value": 207,
+        "true_value": 195
+    },
+    {
+        "round": 15,
+        "agent": "Aggressive Agent",
+        "result": "loss",
+        "bid": 13,
+        "price": 207
+    },
+    {
+        "round": 15,
+        "agent": "Adaptive Agent",
+        "result": "loss",
+        "bid": 196,
+        "price": 207
+    },
+    {
+        "round": 15,
+        "agent": "Conservative Agent",
+        "result": "win",
+        "bid": 200,
+        "price": 207
+    },
+    {
+        "agent": "Aggressive Agent",
+        "round": 16,
+        "bid": 16,
+        "result": "submitted",
+        "perceived_value": 149,
+        "true_value": 129
+    },
+    {
+        "agent": "Random Agent",
+        "round": 16,
+        "bid": 90,
+        "result": "submitted",
+        "perceived_value": 149,
+        "true_value": 129
+    },
+    {
+        "agent": "Conservative Agent",
+        "round": 16,
+        "bid": 93,
+        "result": "submitted",
+        "perceived_value": 149,
+        "true_value": 129
+    },
+    {
+        "round": 16,
+        "agent": "Aggressive Agent",
+        "result": "loss",
+        "bid": 16,
+        "price": 149
+    },
+    {
+        "round": 16,
+        "agent": "Random Agent",
+        "result": "loss",
+        "bid": 90,
+        "price": 149
+    },
+    {
+        "round": 16,
+        "agent": "Conservative Agent",
+        "result": "loss",
+        "bid": 93,
+        "price": 149
+    },
+    {
+        "round": 16,
+        "agent": "Adaptive Agent",
+        "result": "win",
+        "bid": 134,
+        "price": 149
+    },
+    {
+        "agent": "Conservative Agent",
+        "round": 17,
+        "bid": 1,
+        "result": "submitted",
+        "perceived_value": 125,
+        "true_value": 101
+    },
+    {
+        "round": 17,
+        "agent": "Conservative Agent",
+        "result": "loss",
+        "bid": 1,
+        "price": 125
+    },
+    {
+        "round": 17,
+        "agent": "Adaptive Agent",
+        "result": "win",
+        "bid": 125,
+        "price": 125
+    },
+    {
+        "agent": "Aggressive Agent",
+        "round": 18,
+        "bid": 11,
+        "result": "submitted",
+        "perceived_value": 211,
+        "true_value": 195
+    },
+    {
+        "agent": "Random Agent",
+        "round": 18,
+        "bid": 12,
+        "result": "submitted",
+        "perceived_value": 211,
+        "true_value": 195
+    },
+    {
+        "agent": "Conservative Agent",
+        "round": 18,
+        "bid": 192,
+        "result": "submitted",
+        "perceived_value": 211,
+        "true_value": 195
+    },
+    {
+        "round": 18,
+        "agent": "Aggressive Agent",
+        "result": "loss",
+        "bid": 11,
+        "price": 211
+    },
+    {
+        "round": 18,
+        "agent": "Random Agent",
+        "result": "loss",
+        "bid": 12,
+        "price": 211
+    },
+    {
+        "round": 18,
+        "agent": "Adaptive Agent",
+        "result": "loss",
+        "bid": 189,
+        "price": 211
+    },
+    {
+        "round": 18,
+        "agent": "Conservative Agent",
+        "result": "win",
+        "bid": 192,
+        "price": 211
+    },
+    {
+        "agent": "Aggressive Agent",
+        "round": 19,
+        "bid": 167,
+        "result": "submitted",
+        "perceived_value": 168,
+        "true_value": 155
+    },
+    {
+        "agent": "Conservative Agent",
+        "round": 19,
+        "bid": 168,
+        "result": "submitted",
+        "perceived_value": 168,
+        "true_value": 155
+    },
+    {
+        "round": 19,
+        "agent": "Adaptive Agent",
+        "result": "loss",
+        "bid": 151,
+        "price": 168
+    },
+    {
+        "round": 19,
+        "agent": "Aggressive Agent",
+        "result": "loss",
+        "bid": 167,
+        "price": 168
+    },
+    {
+        "round": 19,
+        "agent": "Conservative Agent",
+        "result": "win",
+        "bid": 168,
+        "price": 168
+    },
+    {
+        "agent": "Aggressive Agent",
+        "round": 20,
+        "bid": 21,
+        "result": "submitted",
+        "perceived_value": 69,
+        "true_value": 56
+    },
+    {
+        "round": 20,
+        "agent": "Aggressive Agent",
+        "result": "loss",
+        "bid": 21,
+        "price": 69
+    },
+    {
+        "round": 20,
+        "agent": "Adaptive Agent",
+        "result": "win",
+        "bid": 69,
+        "price": 69
+    },
+    {
+        "agent": "Sniper Agent",
+        "round": 21,
+        "bid": 24,
+        "result": "submitted",
+        "perceived_value": 45,
+        "true_value": 59
+    },
+    {
+        "round": 21,
+        "agent": "Sniper Agent",
+        "result": "loss",
+        "bid": 24,
+        "price": 45
+    },
+    {
+        "round": 21,
+        "agent": "Adaptive Agent",
+        "result": "win",
         "bid": 45,
-        "price": 92
+        "price": 45
     },
     {
-        "round": 1,
-        "agent": "Aggressive",
-        "result": "win",
-        "bid": 70,
-        "price": 92
-    },
-    {
-        "agent": "Random",
-        "round": 2,
-        "bid": 39,
-        "result": "submitted"
-    },
-    {
-        "agent": "Conservative",
-        "round": 2,
-        "bid": 41,
-        "result": "submitted"
-    },
-    {
-        "round": 2,
-        "agent": "Random",
-        "result": "loss",
-        "bid": 39,
-        "price": 63
-    },
-    {
-        "round": 2,
-        "agent": "Conservative",
-        "result": "win",
-        "bid": 41,
-        "price": 63
-    },
-    {
-        "agent": "Random",
-        "round": 3,
-        "bid": 43,
-        "result": "submitted"
-    },
-    {
-        "agent": "Conservative",
-        "round": 3,
-        "bid": 48,
-        "result": "submitted"
-    },
-    {
-        "round": 3,
-        "agent": "Random",
-        "result": "loss",
-        "bid": 43,
-        "price": 153
-    },
-    {
-        "round": 3,
-        "agent": "Conservative",
-        "result": "win",
-        "bid": 48,
-        "price": 153
-    },
-    {
-        "agent": "Random",
-        "round": 4,
-        "bid": 52,
-        "result": "submitted"
-    },
-    {
-        "round": 4,
-        "agent": "Random",
-        "result": "win",
-        "bid": 52,
-        "price": 161
-    },
-    {
-        "agent": "Random",
-        "round": 5,
-        "bid": 41,
-        "result": "submitted"
-    },
-    {
-        "round": 5,
-        "agent": "Random",
-        "result": "win",
-        "bid": 41,
-        "price": 105
-    },
-    {
-        "agent": "Random",
-        "round": 6,
-        "bid": 2,
-        "result": "submitted"
-    },
-    {
-        "agent": "Conservative",
-        "round": 6,
-        "bid": 6,
-        "result": "submitted"
-    },
-    {
-        "agent": "Aggressive",
-        "round": 6,
-        "bid": 28,
-        "result": "submitted"
-    },
-    {
-        "round": 6,
-        "agent": "Random",
-        "result": "loss",
-        "bid": 2,
-        "price": 117
-    },
-    {
-        "round": 6,
-        "agent": "Conservative",
-        "result": "loss",
-        "bid": 6,
-        "price": 117
-    },
-    {
-        "round": 6,
-        "agent": "Aggressive",
-        "result": "win",
-        "bid": 28,
-        "price": 117
-    },
-    {
-        "agent": "Random",
-        "round": 7,
-        "bid": 1,
-        "result": "submitted"
-    },
-    {
-        "agent": "Conservative",
-        "round": 7,
-        "bid": 5,
-        "result": "submitted"
-    },
-    {
-        "round": 7,
-        "agent": "Random",
-        "result": "loss",
-        "bid": 1,
-        "price": 159
-    },
-    {
-        "round": 7,
-        "agent": "Conservative",
-        "result": "win",
-        "bid": 5,
-        "price": 159
-    },
-    {
-        "agent": "Random",
-        "round": 8,
-        "bid": 3,
-        "result": "submitted"
-    },
-    {
-        "agent": "Conservative",
-        "round": 8,
-        "bid": 6,
-        "result": "submitted"
-    },
-    {
-        "round": 8,
-        "agent": "Random",
-        "result": "loss",
-        "bid": 3,
-        "price": 179
-    },
-    {
-        "round": 8,
-        "agent": "Conservative",
-        "result": "win",
-        "bid": 6,
-        "price": 179
-    },
-    {
-        "agent": "Random",
-        "round": 9,
-        "bid": 5,
-        "result": "submitted"
-    },
-    {
-        "round": 9,
-        "agent": "Random",
-        "result": "win",
-        "bid": 5,
-        "price": 70
-    },
-    {
-        "agent": "Random",
-        "round": 10,
-        "bid": 2,
-        "result": "submitted"
-    },
-    {
-        "round": 10,
-        "agent": "Random",
-        "result": "win",
-        "bid": 2,
-        "price": 161
-    },
-    {
-        "agent": "Sniper",
-        "round": 14,
-        "bid": 25,
-        "result": "submitted"
-    },
-    {
-        "round": 14,
-        "agent": "Sniper",
-        "result": "win",
-        "bid": 25,
-        "price": 50
-    },
-    {
-        "agent": "Sniper",
-        "round": 15,
-        "bid": 15,
-        "result": "submitted"
-    },
-    {
-        "round": 15,
-        "agent": "Sniper",
-        "result": "win",
-        "bid": 15,
-        "price": 151
-    },
-    {
-        "agent": "Sniper",
-        "round": 16,
-        "bid": 21,
-        "result": "submitted"
-    },
-    {
-        "round": 16,
-        "agent": "Sniper",
-        "result": "win",
-        "bid": 21,
-        "price": 146
-    },
-    {
-        "agent": "Sniper",
-        "round": 17,
+        "agent": "Random Agent",
+        "round": 22,
         "bid": 17,
-        "result": "submitted"
+        "result": "submitted",
+        "perceived_value": 82,
+        "true_value": 102
     },
     {
-        "round": 17,
-        "agent": "Sniper",
-        "result": "win",
+        "agent": "Conservative Agent",
+        "round": 22,
+        "bid": 18,
+        "result": "submitted",
+        "perceived_value": 82,
+        "true_value": 102
+    },
+    {
+        "agent": "Sniper Agent",
+        "round": 22,
+        "bid": 44,
+        "result": "submitted",
+        "perceived_value": 82,
+        "true_value": 102
+    },
+    {
+        "agent": "Aggressive Agent",
+        "round": 22,
+        "bid": 58,
+        "result": "submitted",
+        "perceived_value": 82,
+        "true_value": 102
+    },
+    {
+        "round": 22,
+        "agent": "Random Agent",
+        "result": "loss",
         "bid": 17,
+        "price": 82
+    },
+    {
+        "round": 22,
+        "agent": "Conservative Agent",
+        "result": "loss",
+        "bid": 18,
+        "price": 82
+    },
+    {
+        "round": 22,
+        "agent": "Sniper Agent",
+        "result": "loss",
+        "bid": 44,
+        "price": 82
+    },
+    {
+        "round": 22,
+        "agent": "Aggressive Agent",
+        "result": "loss",
+        "bid": 58,
+        "price": 82
+    },
+    {
+        "round": 22,
+        "agent": "Adaptive Agent",
+        "result": "win",
+        "bid": 82,
+        "price": 82
+    },
+    {
+        "agent": "Random Agent",
+        "round": 23,
+        "bid": 147,
+        "result": "submitted",
+        "perceived_value": 199,
+        "true_value": 183
+    },
+    {
+        "agent": "Aggressive Agent",
+        "round": 23,
+        "bid": 160,
+        "result": "submitted",
+        "perceived_value": 199,
+        "true_value": 183
+    },
+    {
+        "agent": "Conservative Agent",
+        "round": 23,
+        "bid": 180,
+        "result": "submitted",
+        "perceived_value": 199,
+        "true_value": 183
+    },
+    {
+        "agent": "Sniper Agent",
+        "round": 23,
+        "bid": 195,
+        "result": "submitted",
+        "perceived_value": 199,
+        "true_value": 183
+    },
+    {
+        "round": 23,
+        "agent": "Random Agent",
+        "result": "loss",
+        "bid": 147,
+        "price": 199
+    },
+    {
+        "round": 23,
+        "agent": "Aggressive Agent",
+        "result": "loss",
+        "bid": 160,
+        "price": 199
+    },
+    {
+        "round": 23,
+        "agent": "Adaptive Agent",
+        "result": "loss",
+        "bid": 179,
+        "price": 199
+    },
+    {
+        "round": 23,
+        "agent": "Conservative Agent",
+        "result": "loss",
+        "bid": 180,
+        "price": 199
+    },
+    {
+        "round": 23,
+        "agent": "Sniper Agent",
+        "result": "win",
+        "bid": 195,
+        "price": 199
+    },
+    {
+        "agent": "Sniper Agent",
+        "round": 24,
+        "bid": 24,
+        "result": "submitted",
+        "perceived_value": 108,
+        "true_value": 146
+    },
+    {
+        "agent": "Aggressive Agent",
+        "round": 24,
+        "bid": 48,
+        "result": "submitted",
+        "perceived_value": 108,
+        "true_value": 146
+    },
+    {
+        "agent": "Conservative Agent",
+        "round": 24,
+        "bid": 52,
+        "result": "submitted",
+        "perceived_value": 108,
+        "true_value": 146
+    },
+    {
+        "round": 24,
+        "agent": "Sniper Agent",
+        "result": "loss",
+        "bid": 24,
+        "price": 108
+    },
+    {
+        "round": 24,
+        "agent": "Aggressive Agent",
+        "result": "loss",
+        "bid": 48,
+        "price": 108
+    },
+    {
+        "round": 24,
+        "agent": "Conservative Agent",
+        "result": "loss",
+        "bid": 52,
+        "price": 108
+    },
+    {
+        "round": 24,
+        "agent": "Adaptive Agent",
+        "result": "win",
+        "bid": 108,
+        "price": 108
+    },
+    {
+        "agent": "Random Agent",
+        "round": 25,
+        "bid": 91,
+        "result": "submitted",
+        "perceived_value": 135,
+        "true_value": 147
+    },
+    {
+        "agent": "Conservative Agent",
+        "round": 25,
+        "bid": 95,
+        "result": "submitted",
+        "perceived_value": 135,
+        "true_value": 147
+    },
+    {
+        "agent": "Aggressive Agent",
+        "round": 25,
+        "bid": 114,
+        "result": "submitted",
+        "perceived_value": 135,
+        "true_value": 147
+    },
+    {
+        "agent": "Sniper Agent",
+        "round": 25,
+        "bid": 129,
+        "result": "submitted",
+        "perceived_value": 135,
+        "true_value": 147
+    },
+    {
+        "round": 25,
+        "agent": "Random Agent",
+        "result": "loss",
+        "bid": 91,
         "price": 135
     },
     {
-        "agent": "Sniper",
-        "round": 18,
-        "bid": 18,
-        "result": "submitted"
+        "round": 25,
+        "agent": "Conservative Agent",
+        "result": "loss",
+        "bid": 95,
+        "price": 135
     },
     {
-        "round": 18,
-        "agent": "Sniper",
+        "round": 25,
+        "agent": "Aggressive Agent",
+        "result": "loss",
+        "bid": 114,
+        "price": 135
+    },
+    {
+        "round": 25,
+        "agent": "Sniper Agent",
+        "result": "loss",
+        "bid": 129,
+        "price": 135
+    },
+    {
+        "round": 25,
+        "agent": "Adaptive Agent",
         "result": "win",
-        "bid": 18,
-        "price": 141
+        "bid": 135,
+        "price": 135
+    },
+    {
+        "agent": "Sniper Agent",
+        "round": 26,
+        "bid": 27,
+        "result": "submitted",
+        "perceived_value": 54,
+        "true_value": 65
+    },
+    {
+        "round": 26,
+        "agent": "Sniper Agent",
+        "result": "loss",
+        "bid": 27,
+        "price": 54
+    },
+    {
+        "round": 26,
+        "agent": "Adaptive Agent",
+        "result": "win",
+        "bid": 54,
+        "price": 54
+    },
+    {
+        "agent": "Random Agent",
+        "round": 27,
+        "bid": 62,
+        "result": "submitted",
+        "perceived_value": 101,
+        "true_value": 95
+    },
+    {
+        "agent": "Sniper Agent",
+        "round": 27,
+        "bid": 87,
+        "result": "submitted",
+        "perceived_value": 101,
+        "true_value": 95
+    },
+    {
+        "agent": "Aggressive Agent",
+        "round": 27,
+        "bid": 99,
+        "result": "submitted",
+        "perceived_value": 101,
+        "true_value": 95
+    },
+    {
+        "agent": "Conservative Agent",
+        "round": 27,
+        "bid": 100,
+        "result": "submitted",
+        "perceived_value": 101,
+        "true_value": 95
+    },
+    {
+        "round": 27,
+        "agent": "Random Agent",
+        "result": "loss",
+        "bid": 62,
+        "price": 101
+    },
+    {
+        "round": 27,
+        "agent": "Sniper Agent",
+        "result": "loss",
+        "bid": 87,
+        "price": 101
+    },
+    {
+        "round": 27,
+        "agent": "Aggressive Agent",
+        "result": "loss",
+        "bid": 99,
+        "price": 101
+    },
+    {
+        "round": 27,
+        "agent": "Conservative Agent",
+        "result": "win",
+        "bid": 100,
+        "price": 101
+    },
+    {
+        "agent": "Aggressive Agent",
+        "round": 28,
+        "bid": 23,
+        "result": "submitted",
+        "perceived_value": 135,
+        "true_value": 184
+    },
+    {
+        "agent": "Conservative Agent",
+        "round": 28,
+        "bid": 74,
+        "result": "submitted",
+        "perceived_value": 135,
+        "true_value": 184
+    },
+    {
+        "agent": "Sniper Agent",
+        "round": 28,
+        "bid": 89,
+        "result": "submitted",
+        "perceived_value": 135,
+        "true_value": 184
+    },
+    {
+        "agent": "Random Agent",
+        "round": 28,
+        "bid": 105,
+        "result": "submitted",
+        "perceived_value": 135,
+        "true_value": 184
+    },
+    {
+        "round": 28,
+        "agent": "Aggressive Agent",
+        "result": "loss",
+        "bid": 23,
+        "price": 135
+    },
+    {
+        "round": 28,
+        "agent": "Adaptive Agent",
+        "result": "loss",
+        "bid": 73,
+        "price": 135
+    },
+    {
+        "round": 28,
+        "agent": "Conservative Agent",
+        "result": "loss",
+        "bid": 74,
+        "price": 135
+    },
+    {
+        "round": 28,
+        "agent": "Sniper Agent",
+        "result": "loss",
+        "bid": 89,
+        "price": 135
+    },
+    {
+        "round": 28,
+        "agent": "Random Agent",
+        "result": "win",
+        "bid": 105,
+        "price": 135
+    },
+    {
+        "agent": "Conservative Agent",
+        "round": 29,
+        "bid": 2,
+        "result": "submitted",
+        "perceived_value": 165,
+        "true_value": 162
+    },
+    {
+        "agent": "Sniper Agent",
+        "round": 29,
+        "bid": 103,
+        "result": "submitted",
+        "perceived_value": 165,
+        "true_value": 162
+    },
+    {
+        "agent": "Random Agent",
+        "round": 29,
+        "bid": 132,
+        "result": "submitted",
+        "perceived_value": 165,
+        "true_value": 162
+    },
+    {
+        "agent": "Aggressive Agent",
+        "round": 29,
+        "bid": 143,
+        "result": "submitted",
+        "perceived_value": 165,
+        "true_value": 162
+    },
+    {
+        "round": 29,
+        "agent": "Conservative Agent",
+        "result": "loss",
+        "bid": 2,
+        "price": 165
+    },
+    {
+        "round": 29,
+        "agent": "Adaptive Agent",
+        "result": "loss",
+        "bid": 73,
+        "price": 165
+    },
+    {
+        "round": 29,
+        "agent": "Sniper Agent",
+        "result": "loss",
+        "bid": 103,
+        "price": 165
+    },
+    {
+        "round": 29,
+        "agent": "Random Agent",
+        "result": "loss",
+        "bid": 132,
+        "price": 165
+    },
+    {
+        "round": 29,
+        "agent": "Aggressive Agent",
+        "result": "win",
+        "bid": 143,
+        "price": 165
+    },
+    {
+        "agent": "Random Agent",
+        "round": 30,
+        "bid": 59,
+        "result": "submitted",
+        "perceived_value": 158,
+        "true_value": 174
+    },
+    {
+        "agent": "Aggressive Agent",
+        "round": 30,
+        "bid": 77,
+        "result": "submitted",
+        "perceived_value": 158,
+        "true_value": 174
+    },
+    {
+        "agent": "Conservative Agent",
+        "round": 30,
+        "bid": 80,
+        "result": "submitted",
+        "perceived_value": 158,
+        "true_value": 174
+    },
+    {
+        "agent": "Sniper Agent",
+        "round": 30,
+        "bid": 102,
+        "result": "submitted",
+        "perceived_value": 158,
+        "true_value": 174
+    },
+    {
+        "round": 30,
+        "agent": "Random Agent",
+        "result": "loss",
+        "bid": 59,
+        "price": 158
+    },
+    {
+        "round": 30,
+        "agent": "Aggressive Agent",
+        "result": "loss",
+        "bid": 77,
+        "price": 158
+    },
+    {
+        "round": 30,
+        "agent": "Conservative Agent",
+        "result": "loss",
+        "bid": 80,
+        "price": 158
+    },
+    {
+        "round": 30,
+        "agent": "Sniper Agent",
+        "result": "win",
+        "bid": 102,
+        "price": 158
     }
 ]

@@ -380,7 +380,7 @@ def save_grouped_summary_csv(filename, rows, group_keys):
 
 if __name__ == "__main__":
     ensure_result_folders()
-    # experiment_1_strategy_comparison()
-    # experiment_2_number_of_agents()
-    # experiment_3_information_availability()
+    experiment_1_strategy_comparison()
+    experiment_2_number_of_agents()
+    experiment_3_information_availability()
     experiment_4_market_noise()

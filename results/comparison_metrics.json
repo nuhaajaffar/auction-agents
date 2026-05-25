@@ -1,0 +1,32 @@
+[
+    {
+        "agent": "Fixed Agent",
+        "win_rate": 36.67,
+        "total_profit": 367,
+        "average_profit": 12.23,
+        "bid_efficiency": 0.31,
+        "wins": 11,
+        "average_bid": 83.77,
+        "failed_bids": 1
+    },
+    {
+        "agent": "Random Agent",
+        "win_rate": 16.67,
+        "total_profit": 291,
+        "average_profit": 9.7,
+        "bid_efficiency": 0.65,
+        "wins": 5,
+        "average_bid": 83.95,
+        "failed_bids": 3
+    },
+    {
+        "agent": "Adaptive Agent",
+        "win_rate": 46.67,
+        "total_profit": 79,
+        "average_profit": 2.63,
+        "bid_efficiency": 0.05,
+        "wins": 14,
+        "average_bid": 93.96,
+        "failed_bids": 3
+    }
+]
