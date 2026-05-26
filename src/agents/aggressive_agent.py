@@ -18,7 +18,7 @@ class AggressiveAgent(BaseAgent):
         if minimum_bid > maximum_bid:
             self.record_failed_bid()
             return 0
-        
+
         bid = random.randint(minimum_bid, maximum_bid)
 
         if not self.is_valid_bid(bid, current_highest_bid):

@@ -1,5 +1,3 @@
-import random
-
 from agents.base_agent import BaseAgent
 
 class AdaptiveAgent(BaseAgent):
@@ -7,8 +5,10 @@ class AdaptiveAgent(BaseAgent):
     def __init__(self, name = "Adaptive Agent", balance = 100, use_memory = True):
 
         super().__init__(name, balance)
+
         self.use_memory = use_memory
         self.aggressiveness = 1.0
+        
         self.aggressiveness_history = []
         self.bid_factor_history = []
 
@@ -21,7 +21,7 @@ class AdaptiveAgent(BaseAgent):
 
         base_value = perceived_value * 0.6
 
-        if self.use_memory and memory is not None:        
+        if self.use_memory and memory is not None:
             
             # market signals
             market_avg = memory.get_market_average()
@@ -77,7 +77,7 @@ class AdaptiveAgent(BaseAgent):
         if minimum_bid > maximum_bid:
             self.record_failed_bid()
             return 0
-    
+
         bid = max(minimum_bid, min(bid, maximum_bid))
 
         bid = int(bid)
@@ -112,6 +112,7 @@ class AdaptiveAgent(BaseAgent):
 
         print(
             f"{self.name} | Round {current_round} | "
+            f"Bid: {bid} | Agg: {self.aggressiveness:.2f} | "
             f"True: {item.true_value} | Perceived: {perceived_value} | {memory_status}"
         )
 

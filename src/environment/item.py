@@ -19,6 +19,7 @@ class AuctionItem:
         )
 
     def apply_market_noise(self, noise_level):
+
         noise_ranges = {
             "low": 0.05,
             "medium": 0.15,

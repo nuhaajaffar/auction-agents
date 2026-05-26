@@ -5,7 +5,6 @@ class BaseAgent:
         self.name = name
         self.balance = balance
 
-        self.total_profit = 0
         self.wins = 0
         self.total_spent = 0
         self.total_profit = 0
@@ -17,7 +16,7 @@ class BaseAgent:
     def place_bid(self, item, current_highest_bid = 0, current_round = 1, max_rounds = 5, memory = None):
         
         raise NotImplementedError("Subclasses must implement place_bid()")
-
+    
     def get_item_value(self, item):
 
         return getattr(item, "perceived_value", item.true_value)
@@ -37,18 +36,13 @@ class BaseAgent:
             return False
         
         return True
-    
-    def update_profit(self, profit):
-        
-        self.total_profit += profit
-        self.profit_history.append(profit)
 
     def record_bid(self, bid):
-        
+
         self.bid_history.append(bid)
 
     def record_win(self):
-        
+
         self.wins += 1
 
     def record_failed_bid(self):
@@ -56,7 +50,7 @@ class BaseAgent:
         self.failed_bids += 1
 
     def update_profit(self, profit):
-      
+
         self.total_profit += profit
         self.profit_history.append(profit)
 
@@ -64,16 +58,16 @@ class BaseAgent:
 
         if len(self.bid_history) == 0:
             return 0
-        
+
         return sum(self.bid_history) / len(self.bid_history)
 
     def get_win_rate(self, total_rounds):
-        
+
         if total_rounds == 0:
             return 0
 
         return self.wins / total_rounds
-    
+
     def log_memory(self, memory, data):
 
         if memory is not None:

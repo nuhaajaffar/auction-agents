@@ -10,7 +10,7 @@ class ConservativeAgent(BaseAgent):
 
         if current_highest_bid >= perceived_value:
             return 0
-        
+
         minimum_bid = current_highest_bid + 1
         maximum_bid = min(current_highest_bid + 5, perceived_value, self.balance)
         

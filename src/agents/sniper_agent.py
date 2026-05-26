@@ -14,7 +14,7 @@ class SniperAgent(BaseAgent):
         
         if current_highest_bid >= perceived_value:
             return 0
-        
+
         minimum_bid = current_highest_bid + 15
         maximum_bid = min(current_highest_bid + 30, perceived_value, self.balance)
 

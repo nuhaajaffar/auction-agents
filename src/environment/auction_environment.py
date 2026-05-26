@@ -71,6 +71,7 @@ class AuctionEnvironment:
             return None, 0
 
         highest_bid = max(valid_bids.values())
+
         highest_bidders = [
             agent for agent, bid in valid_bids.items()
             if bid == highest_bid
@@ -87,8 +88,10 @@ class AuctionEnvironment:
     def run_round(self, round_number):
 
         item = self.generate_item(round_number)
+
         true_value = item.true_value
         perceived_value = getattr(item, "perceived_value", item.true_value)
+
         bids = self.collect_bids(item, round_number)
         
         winner, winning_bid = self.determine_winner(bids)
@@ -150,7 +153,7 @@ class AuctionEnvironment:
             "bids": {
                 agent.name: bid
                 for agent, bid in bids.items()
-            }        
+            }
         }
 
         self.results.append(round_result)
@@ -183,7 +186,6 @@ class AuctionEnvironment:
     def run_simulation(self):
 
         for round_number in range(1, self.num_rounds + 1):
-
             self.run_round(round_number)
 
         print("\n====================")
@@ -192,7 +194,6 @@ class AuctionEnvironment:
         print("\nFINAL SUMMARY")
 
         for agent in self.agents:
-
             print(
                 f"{agent.name} | "
                 f"Wins: {agent.wins} | "
