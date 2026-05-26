@@ -1,8 +1,8 @@
 {
     "adaptive_agent": {
-        "wins": 13,
-        "total_profit": 781,
-        "average_bid": 49.67,
+        "wins": 17,
+        "total_profit": 1232,
+        "average_bid": 49.17,
         "failed_bids": 0,
         "aggressiveness_history": [
             0.97,
@@ -38,9 +38,9 @@
         ]
     },
     "fixed_agent": {
-        "wins": 17,
-        "total_profit": 1088,
-        "average_bid": 60.0,
-        "failed_bids": 0
+        "wins": 13,
+        "total_profit": 644,
+        "average_bid": 61.04,
+        "failed_bids": 3
     }
 }

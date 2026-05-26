@@ -1,0 +1,14 @@
+experiment,agent,avg_profit,std_profit,avg_win_rate,std_win_rate,avg_efficiency,std_efficiency,num_agents,memory_access,noise_level
+experiment_1,Random Agent,216.0,109.49,0.19,0.0847,0.4284,0.0783,,,
+experiment_1,Conservative Agent,211.8,141.06,0.2567,0.0943,0.284,0.0901,,,
+experiment_1,Aggressive Agent,216.8,88.22,0.2833,0.055,0.2652,0.0654,,,
+experiment_1,Sniper Agent,35.7,31.62,0.08,0.0322,0.1369,0.1118,,,
+experiment_1,Adaptive Agent,233.5,102.69,0.19,0.0721,0.5092,0.1716,,,
+experiment_2,,202.98,137.31,0.2,0.0967,0.3524,0.2053,5.0,,
+experiment_2,,39.01,42.83,0.1,0.0838,0.115,0.1262,10.0,,
+experiment_2,,1.92,5.11,0.05,0.0597,0.0045,0.0119,20.0,,
+experiment_3,,109.0,84.85,0.4633,0.0367,0.0746,0.0588,,yes,
+experiment_3,,220.6,98.37,0.18,0.0724,0.4635,0.0931,,no,
+experiment_4,,116.46,103.74,0.2,0.1759,0.2123,0.1712,,,low
+experiment_4,,130.38,110.94,0.2,0.1702,0.3919,0.4601,,,medium
+experiment_4,,141.94,117.56,0.2,0.17,0.3199,0.3474,,,high
