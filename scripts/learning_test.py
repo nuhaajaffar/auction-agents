@@ -1,6 +1,7 @@
 import sys
 import os
 import json
+import random
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "src")))
 
@@ -10,6 +11,8 @@ from agents.adaptive_agent import AdaptiveAgent
 from memory import Memory
 
 def run_learning_test():
+    
+    random.seed(5000)
 
     print("\n===== LEARNING BEHAVIOUR TEST =====")
 
@@ -17,7 +20,7 @@ def run_learning_test():
 
     fixed_agent = FixedAgent("Fixed Agent", balance = 1500, fixed_bid = 60)
     adaptive_agent = AdaptiveAgent("Adaptive Agent", balance = 1500)
-
+    
     agents = [fixed_agent, adaptive_agent]
 
     env = AuctionEnvironment(
@@ -51,4 +54,5 @@ def run_learning_test():
 
     print("\nLearning metrics exported successfully.")
 
-run_learning_test()
+if __name__ == "__main__":
+    run_learning_test()

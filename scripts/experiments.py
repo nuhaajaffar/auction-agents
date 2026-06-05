@@ -103,6 +103,8 @@ def experiment_1_strategy_comparison():
 
     for run in range(1, NUM_RUNS + 1):
 
+        random.seed(1000 + run)
+
         agents = [
             RandomAgent("Random Agent", balance = STARTING_BALANCE),
             ConservativeAgent("Conservative Agent", balance = STARTING_BALANCE),
@@ -139,6 +141,8 @@ def experiment_2_number_of_agents():
     for num_agents in agent_counts:
 
         for run in range(1, NUM_RUNS + 1):
+
+            random.seed(2000 + (num_agents * 100) + run)
 
             agents = create_agent_set(num_agents)
 
