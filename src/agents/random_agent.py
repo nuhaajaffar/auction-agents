@@ -1,3 +1,5 @@
+# baseline testing agent
+
 import random
 
 from agents.base_agent import BaseAgent
@@ -5,7 +7,7 @@ from agents.base_agent import BaseAgent
 class RandomAgent(BaseAgent):
 
     def place_bid(self, item, current_highest_bid = 0, current_round = 1, max_rounds = 5, memory = None):
-        
+
         perceived_value = self.get_item_value(item)
 
         if current_highest_bid >= perceived_value:

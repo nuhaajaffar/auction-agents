@@ -21,8 +21,8 @@ def run_learning_test():
     agents = [fixed_agent, adaptive_agent]
 
     env = AuctionEnvironment(
-        agents = agents,
-        memory = memory,
+        agents=agents,
+        memory=memory,
         num_rounds = 30
     )
 
@@ -44,7 +44,7 @@ def run_learning_test():
         }
     }
 
-    os.makedirs("results", exist_ok = True)
+    os.makedirs("results", exist_ok=True)
 
     with open("results/learning_metrics.json", "w") as f:
         json.dump(learning_results, f, indent = 4)

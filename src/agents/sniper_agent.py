@@ -8,7 +8,6 @@ class SniperAgent(BaseAgent):
         
         perceived_value = getattr(item, "perceived_value", item.true_value)
 
-        # activate only in late game
         if current_round < max_rounds * 0.7:
             return 0
         

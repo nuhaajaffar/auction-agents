@@ -5,9 +5,9 @@
 # calculate profit
 # store results
 
-import random
 import json
 import os
+import random
 
 from environment.item import AuctionItem
 
@@ -25,7 +25,6 @@ class AuctionEnvironment:
     def generate_item(self, round_number):
 
         value = random.randint(50, 200)
-
         item = AuctionItem(round_number, value)
 
         if self.noise_level not in (None, "none"):
@@ -41,8 +40,15 @@ class AuctionEnvironment:
         random.shuffle(bidding_order)
 
         for agent in bidding_order:
+
             try:
-                bid = agent.place_bid(item, current_highest_bid, current_round, self.num_rounds, self.memory)
+                bid = agent.place_bid(
+                    item,
+                    current_highest_bid,
+                    current_round,
+                    self.num_rounds,
+                    self.memory
+                )
             except Exception as e:
                 print(f"ERROR in {agent.name}: {e}")
                 bid = 0
@@ -59,7 +65,7 @@ class AuctionEnvironment:
 
     def determine_winner(self, bids):
 
-        # remove invalid/non-participating bids
+        # remove invalid and non-participating bids
         valid_bids = {
             agent: bid
             for agent, bid in bids.items()
@@ -73,7 +79,8 @@ class AuctionEnvironment:
         highest_bid = max(valid_bids.values())
 
         highest_bidders = [
-            agent for agent, bid in valid_bids.items()
+            agent
+            for agent, bid in valid_bids.items()
             if bid == highest_bid
         ]
 
@@ -93,7 +100,7 @@ class AuctionEnvironment:
         perceived_value = getattr(item, "perceived_value", item.true_value)
 
         bids = self.collect_bids(item, round_number)
-        
+
         winner, winning_bid = self.determine_winner(bids)
 
         # record losing bids in memory
@@ -109,6 +116,7 @@ class AuctionEnvironment:
 
         # no winner case
         if winner is None:
+
             print("\n====================")
             print(f"Round {round_number}")
             print(f"Item {item.item_id} | True Value: {true_value} | Perceived Value: {perceived_value}")
@@ -121,10 +129,7 @@ class AuctionEnvironment:
             return
 
         # based on the actual true value, not perceived value
-        profit = self.calculate_profit(
-            true_value,
-            winning_bid
-        )
+        profit = self.calculate_profit(true_value, winning_bid)
 
         # update winner statistics
         winner.record_win()
@@ -194,6 +199,7 @@ class AuctionEnvironment:
         print("\nFINAL SUMMARY")
 
         for agent in self.agents:
+
             print(
                 f"{agent.name} | "
                 f"Wins: {agent.wins} | "

@@ -1,3 +1,5 @@
+# parent class
+
 class BaseAgent:
 
     def __init__(self, name, balance = 100):
@@ -14,13 +16,13 @@ class BaseAgent:
         self.profit_history = []
 
     def place_bid(self, item, current_highest_bid = 0, current_round = 1, max_rounds = 5, memory = None):
-        
+
         raise NotImplementedError("Subclasses must implement place_bid()")
     
     def get_item_value(self, item):
 
         return getattr(item, "perceived_value", item.true_value)
-    
+
     def is_valid_bid(self, bid, current_highest_bid, minimum_bid = 1):
 
         # bid must meet min value

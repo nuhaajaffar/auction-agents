@@ -39,8 +39,8 @@ def run_comparison_test():
     ]
 
     env = AuctionEnvironment(
-        agents = agents,
-        memory = memory,
+        agents=agents,
+        memory=memory,
         num_rounds = 30
     )
 

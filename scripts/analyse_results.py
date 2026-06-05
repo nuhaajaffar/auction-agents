@@ -110,7 +110,7 @@ def save_line_chart(
                 capsize = 5
             )
         else:
-            plt.plot(df[x_col], df[y_col], marker = "o")
+            plt.plot(df[x_col], df[y_col], marker="o")
 
     else:
         for group_name, group_df in df.groupby(group_col):
@@ -389,7 +389,6 @@ def analyse_experiment_3():
         )
 
 def analyse_experiment_4():
-
     print("\nAnalysing Experiment 4...")
 
     summary_path = os.path.join(SUMMARY_DIR, "experiment_4_market_noise_summary.csv")
@@ -444,7 +443,6 @@ def analyse_experiment_4():
         )
 
 def plot_adaptive_learning_over_time():
-
     print("\nCreating adaptive learning-over-time graph...")
 
     path = os.path.join(RESULTS_DIR, "learning_metrics.json")
@@ -490,7 +488,6 @@ def plot_adaptive_learning_over_time():
     print(f"Saved figure: {output_path}")
 
 def create_combined_summary_table():
-
     print("\nCreating combined summary table...")
 
     files = {

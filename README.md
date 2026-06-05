@@ -94,10 +94,10 @@ auction-agents/
 │   ├── memory.py
 │   └── main.py
 │
-├── test/
-│   └── analyse_results.py
-│   └── run_experiments.py
-│   └── comparison_test.py
+├── scripts/
+│   ├── analyse_results.py
+│   ├── experiments.py
+│   ├── comparison_test.py
 │   └── learning_test.py
 │
 ├── results/
@@ -139,7 +139,7 @@ This is only a small example simulation and is not the full experimental evaluat
 To reproduce the experiments reported in the coursework, run the experiment script:
 
 ```bash
-python test/run_experiments.py
+python scripts/experiments.py
 ```
 
 This runs the repeated simulations for the four experiments and stores the raw and summary result files.
@@ -149,7 +149,7 @@ This runs the repeated simulations for the four experiments and stores the raw a
 To regenerate the figures and processed result tables used in the report, run:
 
 ```bash
-python test/analyse_results.py
+python scripts/analyse_results.py
 ```
 
 The generated outputs are stored in the `results/` folder.

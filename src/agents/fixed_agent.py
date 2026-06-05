@@ -3,7 +3,6 @@ from agents.base_agent import BaseAgent
 class FixedAgent(BaseAgent):
 
     def __init__(self, name = "Fixed", balance = 100, fixed_bid = 60):
-
         super().__init__(name, balance)
         self.fixed_bid = fixed_bid
 

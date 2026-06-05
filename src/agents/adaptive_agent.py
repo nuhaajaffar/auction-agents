@@ -8,17 +8,20 @@ class AdaptiveAgent(BaseAgent):
 
         self.use_memory = use_memory
         self.aggressiveness = 1.0
-        
+
         self.aggressiveness_history = []
         self.bid_factor_history = []
 
+    # main function
     def place_bid(self, item, current_highest_bid = 0, current_round = 1, max_rounds = 5, memory = None):
 
         perceived_value = getattr(item, "perceived_value", item.true_value)
 
+        # stop if already overvalued
         if current_highest_bid >= perceived_value:
             return 0
 
+        # base value
         base_value = perceived_value * 0.6
 
         if self.use_memory and memory is not None:
@@ -49,6 +52,7 @@ class AdaptiveAgent(BaseAgent):
             competition_factor = 1 + (competition * 0.5)
 
             overpay_factor = self.get_overpay_factor(memory)
+        
         else:
             market_avg = 0
             volatility = 0
@@ -61,7 +65,7 @@ class AdaptiveAgent(BaseAgent):
             competition_factor = 1.0
             overpay_factor = 1.0
 
-        # final bid calculation
+        # combine all factors
         bid = base_value
         bid *= market_factor
         bid *= pressure_factor
@@ -79,10 +83,9 @@ class AdaptiveAgent(BaseAgent):
             return 0
 
         bid = max(minimum_bid, min(bid, maximum_bid))
-
         bid = int(bid)
 
-        # validation + recording
+        # validation
         if not self.is_valid_bid(bid, current_highest_bid):
             self.record_failed_bid()
             return 0
@@ -126,7 +129,6 @@ class AdaptiveAgent(BaseAgent):
         else:
             self.aggressiveness -= 0.03
 
-        # clamp to safe range
         self.aggressiveness = max(0.7, min(1.2, self.aggressiveness))
 
     def get_overpay_factor(self, memory):

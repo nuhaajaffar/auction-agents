@@ -2,8 +2,10 @@ from agents.random_agent import RandomAgent
 from agents.conservative_agent import ConservativeAgent
 from agents.aggressive_agent import AggressiveAgent
 from agents.sniper_agent import SniperAgent
-from environment.auction_environment import AuctionEnvironment
+
 from memory import Memory
+from environment.auction_environment import AuctionEnvironment
+
 
 agents = [
     RandomAgent("Random"),

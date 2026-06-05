@@ -47,9 +47,7 @@ class Memory:
             return 0
 
         recent = self.market_prices[-10:]
-
         avg = sum(recent) / len(recent)
-
         variance = sum((p - avg) ** 2 for p in recent) / len(recent)
 
         return variance ** 0.5

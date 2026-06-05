@@ -95,7 +95,6 @@ def create_agents():
         AdaptiveAgent("Adaptive Agent", balance = STARTING_BALANCE, use_memory = True)
     ]
 
-'''
 def experiment_1_strategy_comparison():
 
     print("\n===== EXPERIMENT 1: STRATEGY COMPARISON =====")
@@ -288,7 +287,6 @@ def experiment_4_market_noise():
         raw_results,
         group_keys = ["noise_level", "agent_type"]
     )
-'''
 
 def save_raw_csv(filename, rows):
 
@@ -317,6 +315,7 @@ def save_summary_csv(filename, rows, group_key):
     summary_rows = []
 
     for key, values in grouped.items():
+
         profits = [v["total_profit"] for v in values]
         win_rates = [v["win_rate"] for v in values]
         efficiencies = [v["efficiency"] for v in values]
@@ -353,6 +352,7 @@ def save_grouped_summary_csv(filename, rows, group_keys):
     summary_rows = []
 
     for key, values in grouped.items():
+
         profits = [v["total_profit"] for v in values]
         win_rates = [v["win_rate"] for v in values]
         efficiencies = [v["efficiency"] for v in values]
@@ -373,8 +373,8 @@ def save_grouped_summary_csv(filename, rows, group_keys):
 
         summary_rows.append(summary_row)
 
-    with open(filename, "w", newline = "") as f:
-        writer = csv.DictWriter(f, fieldnames = summary_rows[0].keys())
+    with open(filename, "w", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=summary_rows[0].keys())
         writer.writeheader()
         writer.writerows(summary_rows)
 
@@ -382,7 +382,7 @@ def save_grouped_summary_csv(filename, rows, group_keys):
 
 if __name__ == "__main__":
     ensure_result_folders()
-    # experiment_1_strategy_comparison()
-    # experiment_2_number_of_agents()
-    # experiment_3_information_availability()
-    # experiment_4_market_noise()
+    experiment_1_strategy_comparison()
+    experiment_2_number_of_agents()
+    experiment_3_information_availability()
+    experiment_4_market_noise()

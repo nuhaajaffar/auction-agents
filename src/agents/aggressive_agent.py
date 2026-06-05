@@ -10,11 +10,10 @@ class AggressiveAgent(BaseAgent):
 
         if current_highest_bid >= perceived_value:
             return 0
-        
+
         minimum_bid = current_highest_bid + 10
         maximum_bid = min(current_highest_bid + 25, perceived_value, self.balance)
 
-        # prevent invalid ranges
         if minimum_bid > maximum_bid:
             self.record_failed_bid()
             return 0

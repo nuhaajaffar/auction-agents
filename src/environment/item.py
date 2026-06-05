@@ -1,17 +1,14 @@
-# stores item value
-
 import random
 
+# stores item value
 class AuctionItem:
 
     def __init__(self, item_id, true_value):
-
         self.item_id = item_id
         self.true_value = true_value
         self.perceived_value = true_value
 
     def __str__(self):
-
         return (
             f"Item {self.item_id} | "
             f"True Value: {self.true_value} | "
@@ -19,7 +16,6 @@ class AuctionItem:
         )
 
     def apply_market_noise(self, noise_level):
-
         noise_ranges = {
             "low": 0.05,
             "medium": 0.15,
