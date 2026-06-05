@@ -20,11 +20,11 @@ The main research questions are:
 
 The simulation includes five main bidding agents:
 
-- **Random Agent**: places random valid bids and acts as a baseline.
-- **Conservative Agent**: places cautious bids to protect profit margins.
-- **Aggressive Agent**: places larger bids to increase its chance of winning.
-- **Sniper Agent**: waits until later in the auction before bidding.
-- **Adaptive Agent**: uses auction memory and previous outcomes to adjust its bidding behaviour.
+* **Random Agent**: places random valid bids and acts as a baseline.
+* **Conservative Agent**: places cautious bids to protect profit margins.
+* **Aggressive Agent**: places larger bids to increase its chance of winning.
+* **Sniper Agent**: waits until later in the auction before bidding.
+* **Adaptive Agent**: uses auction memory and previous outcomes to adjust its bidding behaviour.
 
 ## Additional Testing Agent
 
@@ -72,6 +72,12 @@ Compares the Adaptive Agent with and without access to auction memory.
 
 Tests agent robustness under low, medium and high levels of market noise.
 
+## Reproducibility
+
+The final experiment scripts use fixed random seeds and consistent generated auction conditions where required, so the main results and figures can be regenerated consistently. 
+
+Repeated runs are still used to calculate average performance and standard deviation, but the final code is designed so that the same experiment setup can be reproduced.
+
 ## Project Structure
 
 ```text
@@ -105,6 +111,7 @@ auction-agents/
 │   ├── summaries/
 │   └── figures/
 │
+├── .gitignore
 └── README.md
 ```
 
@@ -112,13 +119,27 @@ auction-agents/
 
 The project was implemented in Python.
 
-Main libraries used:
+Main libraries and modules used:
 
-- `pandas` for loading and analysing CSV result files.
-- `matplotlib` for generating charts and figures.
-- `json` and `csv` for storing simulation outputs.
-- `os` for file and folder management.
-- `random` for item generation, bidding behaviour, ordering and market noise.
+* `pandas` for loading and analysing CSV result files.
+* `matplotlib` for generating charts and figures.
+* `json` and `csv` for storing simulation outputs.
+* `os` for file and folder management.
+* `random` for item generation, bidding behaviour, ordering and market noise.
+
+## Requirements
+
+This project uses:
+
+* Python 3
+* pandas
+* matplotlib
+
+Install the required libraries using:
+
+```bash
+pip install pandas matplotlib
+```
 
 ## How to Run
 
@@ -154,7 +175,7 @@ python scripts/analyse_results.py
 
 The generated outputs are stored in the `results/` folder.
 
-## Important Note on main.py
+## Important Note on `main.py`
 
 The `main.py` file is only a simple example simulation. The full experimental evaluation is implemented separately in the experiment script, and the visualisation/statistical analysis is implemented in the analysis script.
 
@@ -176,22 +197,22 @@ The `results/summaries/` folder contains processed CSV files with average result
 
 The `results/figures/` folder contains the graphs used in the report, including:
 
-- Strategy comparison charts.
-- Competition line graphs.
-- Memory access comparison charts.
-- Market noise graphs.
-- Adaptive learning behaviour graph.
+* Strategy comparison charts.
+* Competition line graphs.
+* Memory access comparison charts.
+* Market noise graphs.
+* Adaptive learning behaviour graph.
 
 ## Evaluation Metrics
 
 The agents are evaluated using the following metrics:
 
-- **Average profit**: how much value an agent gained after paying winning bids.
-- **Win rate**: how often an agent won auctions.
-- **Average bid**: the average amount submitted by an agent when bidding.
-- **Bidding efficiency**: how much profit was gained relative to spending.
-- **Failed bids**: how often an agent could not place a valid bid.
-- **Standard deviation**: how stable the results were across repeated simulation runs.
+* **Average profit**: how much value an agent gained after paying winning bids.
+* **Win rate**: how often an agent won auctions.
+* **Average bid**: the average amount submitted by an agent when bidding.
+* **Bidding efficiency**: how much profit was gained relative to spending.
+* **Failed bids**: how often an agent could not place a valid bid.
+* **Standard deviation**: how stable the results were across repeated simulation runs.
 
 ## Notes for Markers
 
