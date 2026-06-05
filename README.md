@@ -118,11 +118,23 @@ auction-agents/
 │   ├── raw/
 │   ├── summaries/
 │   ├── figures/
-│   └── learning_metrics.json
+│
+├── docs/
+│   ├── auction-agents.pdf
+│   └── auction-agents-extended.pdf
 │
 ├── .gitignore
 └── README.md
 ```
+
+## Documentation
+
+The `docs/` folder contains the report documents:
+
+* `auction-agents.pdf`: shortened final report version.
+* `auction-agents-extended.pdf`: extended report version with fuller explanation and analysis.
+
+These reports explain the project motivation, related literature, methodology, implementation, experimental setup, results, discussion, reflection and future work.
 
 ## Technologies Used
 
