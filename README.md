@@ -86,6 +86,15 @@ python scripts/learning_test.py
 python scripts/analyse_results.py
 ```
 
+## Documentation
+
+The `docs/` folder contains the report documents:
+
+* `auction-agents.pdf`: shortened final report version.
+* `auction-agents-extended.pdf`: extended report version with fuller explanation and analysis.
+
+These reports explain the project motivation, related literature, methodology, implementation, experimental setup, results, discussion, reflection and future work.
+
 ## Project Structure
 
 ```text
@@ -126,15 +135,6 @@ auction-agents/
 ├── .gitignore
 └── README.md
 ```
-
-## Documentation
-
-The `docs/` folder contains the report documents:
-
-* `auction-agents.pdf`: shortened final report version.
-* `auction-agents-extended.pdf`: extended report version with fuller explanation and analysis.
-
-These reports explain the project motivation, related literature, methodology, implementation, experimental setup, results, discussion, reflection and future work.
 
 ## Technologies Used
 
